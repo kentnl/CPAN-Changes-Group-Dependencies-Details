@@ -16,7 +16,7 @@ use MooX::Lsub qw( lsub );
 use Carp qw( croak );
 use CPAN::Meta::Prereqs::Diff;
 
-lsub arrow_join  => sub { qq[\x{A0}\x{2192}\x{A0}] };
+lsub arrow_join  => sub { chr 0xA0 . chr 0x2192 . chr 0xA0  };
 lsub new_prereqs => sub { croak q{required parameter <new_prereqs> missing} };
 lsub old_prereqs => sub { croak q{required parameter <old_prereqs> missing} };
 lsub prereqs_diff => sub {
