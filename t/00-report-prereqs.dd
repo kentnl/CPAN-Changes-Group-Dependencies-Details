@@ -69,6 +69,7 @@ do { my $x = {
                                       'Carp' => '0',
                                       'Moo' => '0',
                                       'MooX::Lsub' => '0',
+                                      'charnames' => '0',
                                       'perl' => '5.008',
                                       'strict' => '0',
                                       'utf8' => '0',
