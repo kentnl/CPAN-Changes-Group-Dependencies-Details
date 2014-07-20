@@ -58,7 +58,7 @@ has change_type => (
     local $" = q[, ];
     croak "change_type must be one of <@{ keys %{$valid_change_types } }>, not $_[0]"
       unless exists $valid_change_types->{ $_[0] };
-  }
+  },
 );
 
 my $valid_phases = { map { $_ => 1 } qw( configure build runtime test develop ) };
@@ -69,7 +69,7 @@ has phase => (
   isa      => sub {
     local $" = q[, ];
     croak "phase must be one of <@{ keys %{$valid_phases } }>, not $_[0]" unless exists $valid_phases->{ $_[0] };
-  }
+  },
 );
 
 my $valid_types = { map { $_ => 1 } qw( requires recommends suggests conflicts ) };
@@ -80,7 +80,7 @@ has type => (
   isa      => sub {
     local $" = q[, ];
     croak "type must be one of <@{ keys %{$valid_types } }>, not $_[0]" unless exists $valid_types->{ $_[0] };
-  }
+  },
 );
 
 sub changes {
@@ -89,12 +89,13 @@ sub changes {
     phases => [ $self->phase ],
     types  => [ $self->type ],
   );
-  my $info   = $valid_change_types->{ $self->change_type };
-  my $method = $info->{method};
+  my $method   = $valid_change_types->{ $self->change_type }->{method};
+  my $notation = $valid_change_types->{ $self->change_type }->{notation};
+
   my (@relevant) = grep { $_->$method() } @diffs;
   return [] unless @relevant;
   my $formatter;
-  if ( 'toggle' eq $info->{notation} ) {
+  if ( 'toggle' eq $notation ) {
     $formatter = sub {
       my $diff   = shift;
       my $output = $diff->module;
@@ -104,7 +105,7 @@ sub changes {
       return $output;
     };
   }
-  elsif ( 'change' eq $info->{notation} ) {
+  elsif ( 'change' eq $notation ) {
     my $arrow_join = $self->arrow_join;
     $formatter = sub {
       my $diff = shift;
