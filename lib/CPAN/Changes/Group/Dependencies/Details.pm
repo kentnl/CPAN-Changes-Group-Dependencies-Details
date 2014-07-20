@@ -15,7 +15,7 @@ use Moo qw( has );
 use MooX::Lsub qw( lsub );
 use Carp qw( croak );
 use CPAN::Meta::Prereqs::Diff;
-use charnames ":full";
+use charnames ':full';
 
 lsub arrow_join  => sub { qq[\N{NO-BREAK SPACE}\N{RIGHTWARDS ARROW}\N{NO-BREAK SPACE}] };
 lsub new_prereqs => sub { croak q{required parameter <new_prereqs> missing} };
