@@ -87,7 +87,6 @@ lsub prereqs_diff => sub {
   return CPAN::Meta::Prereqs::Diff->new( old_prereqs => $_[0]->old_prereqs, new_prereqs => $_[0]->new_prereqs, );
 };
 
-
 has change_type => (
   is       => 'ro',
   required => 1,
@@ -137,7 +136,6 @@ has type => (
   },
 );
 
-
 sub changes {
   my ($self)     = @_;
   my $method     = $self->change_type_method;
@@ -181,7 +179,7 @@ version 0.001000
   my $new_prereqs => CPAN::Meta->load_file('Dist-Foo-1.01/META.json')->effective_prereqs,
 
   my $group =  CPAN::Changes::Group::Dependencies::Details->new(
-    old_prereqs => $old_prereqs, 
+    old_prereqs => $old_prereqs,
     new_prereqs => $new_prereqs,
     change_type => 'Added',
     phase       => 'runtime',
@@ -193,7 +191,7 @@ version 0.001000
 This is simple an element of refactoring in my C<dep_changes> script.
 
 It is admittedly not very useful in its current incarnation due to needing quite a few instances
-to get anything done with them, but that's mostly due to design headaches about thinking of I<any> way to solve a few problmes.
+to get anything done with them, but that's mostly due to design headaches about thinking of I<any> way to solve a few problems.
 
 =head1 AUTHOR
 
