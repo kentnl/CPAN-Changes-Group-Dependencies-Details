@@ -1,0 +1,38 @@
+# NAME
+
+CPAN::Changes::Group::Dependencies::Details - Full details of dependency changes.
+
+# VERSION
+
+version 0.001000
+
+# SYNOPSIS
+
+    my $old_prereqs => CPAN::Meta->load_file('Dist-Foo-1.01/META.json')->effective_prereqs,
+    my $new_prereqs => CPAN::Meta->load_file('Dist-Foo-1.01/META.json')->effective_prereqs,
+
+    my $group =  CPAN::Changes::Group::Dependencies::Details->new(
+      old_prereqs => $old_prereqs,
+      new_prereqs => $new_prereqs,
+      change_type => 'Added',
+      phase       => 'runtime',
+      type        => 'requires',
+    )->attach_to($cpan_changes_release);
+
+# DESCRIPTION
+
+This is simple an element of refactoring in my `dep_changes` script.
+
+It is admittedly not very useful in its current incarnation due to needing quite a few instances
+to get anything done with them, but that's mostly due to design headaches about thinking of _any_ way to solve a few problems.
+
+# AUTHOR
+
+Kent Fredric <kentfredric@gmail.com>
+
+# COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
