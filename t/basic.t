@@ -59,7 +59,7 @@ for my $old (@prereqs) {
     else {
       if (UBERVERBOSE) {
         note explain { new => $new->as_string_hash, old => $old->as_string_hash };
-        note join qq[\n], map { Encode::encode( ':UTF-8', $_, Encode::FB_CROAK ) } @out;
+        note join qq[\n], map { Encode::encode( ':UTF-8', $_, Encode::FB_CROAK() ) } @out;
       }
       isnt( scalar @out, 0, 'Some changes if refaddr changes w/ all' );
     }
