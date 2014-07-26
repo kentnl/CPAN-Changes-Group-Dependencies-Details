@@ -212,7 +212,7 @@ version 0.001000
     phase       => 'runtime',
     type        => 'requires',
   );
-  
+
   my $release = CPAN::Changes::Release->new(
     version => '0.01',
     date    => '2014-07-26',
