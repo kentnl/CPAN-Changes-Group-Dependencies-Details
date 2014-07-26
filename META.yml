@@ -5,7 +5,6 @@ author:
 build_requires:
   CPAN::Changes::Release: '0'
   CPAN::Meta::Prereqs: '0'
-  Encode: '0'
   ExtUtils::MakeMaker: '0'
   File::Spec: '0'
   File::Spec::Functions: '0'
@@ -13,6 +12,7 @@ build_requires:
   Scalar::Util: '0'
   Test::Differences: '0'
   Test::More: '0.89'
+  if: '0'
   version: '0.77'
 configure_requires:
   ExtUtils::MakeMaker: '6.30'
@@ -100,7 +100,6 @@ x_BuiltWith:
     Dist::Zilla::Plugin::Twitter: '0.025'
     Dist::Zilla::Plugin::UploadToCPAN: '5.019'
     Dist::Zilla::PluginBundle::Author::KENTNL: '2.016004'
-    Encode: '2.62'
     ExtUtils::MakeMaker: '6.98'
     File::Spec: '3.48'
     File::Spec::Functions: '3.48'
@@ -118,6 +117,7 @@ x_BuiltWith:
     Test::Pod::Coverage: '1.10'
     charnames: '1.41'
     constant: '1.31'
+    if: '0.0603'
     strict: '1.08'
     utf8: '1.14'
     version: '0.9908'

@@ -90,7 +90,6 @@ do { my $x = {
                    'requires' => {
                                    'CPAN::Changes::Release' => '0',
                                    'CPAN::Meta::Prereqs' => '0',
-                                   'Encode' => '0',
                                    'ExtUtils::MakeMaker' => '0',
                                    'File::Spec' => '0',
                                    'File::Spec::Functions' => '0',
@@ -98,6 +97,7 @@ do { my $x = {
                                    'Scalar::Util' => '0',
                                    'Test::Differences' => '0',
                                    'Test::More' => '0.89',
+                                   'if' => '0',
                                    'version' => '0.77'
                                  }
                  }

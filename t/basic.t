@@ -1,13 +1,14 @@
 use strict;
 use warnings;
 
-use Test::More tests => 100;
+use Test::More tests     => 100;
+use constant UBERVERBOSE => 0;
+use if UBERVERBOSE, Encode => qw( encode );
 use Test::Differences;
 
 # ABSTRACT: Basic comparison
 
 use CPAN::Changes::Group::Dependencies::Details;
-use Encode qw( encode );
 
 # Changes.deps.all
 my $set = [];
@@ -56,8 +57,10 @@ for my $old (@prereqs) {
       eq_or_diff( \@out, [], 'No Changes if old == new' );
     }
     else {
-      note explain { new => $new->as_string_hash, old => $old->as_string_hash };
-      note join qq[\n], map { Encode::encode( ':UTF-8', $_, Encode::FB_CROAK ) } @out;
+      if (UBERVERBOSE) {
+        note explain { new => $new->as_string_hash, old => $old->as_string_hash };
+        note join qq[\n], map { Encode::encode( ':UTF-8', $_, Encode::FB_CROAK ) } @out;
+      }
       isnt( scalar @out, 0, 'Some changes if refaddr changes w/ all' );
     }
   }
