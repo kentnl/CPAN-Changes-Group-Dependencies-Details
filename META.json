@@ -124,6 +124,17 @@
       }
    },
    "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/kentnl/CPAN-Changes-Group-Dependencies-Details/issues"
+      },
+      "homepage" : "https://github.com/kentnl/CPAN-Changes-Group-Dependencies-Details",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/kentnl/CPAN-Changes-Group-Dependencies-Details.git",
+         "web" : "https://github.com/kentnl/CPAN-Changes-Group-Dependencies-Details"
+      }
+   },
    "version" : "0.001000",
    "x_BuiltWith" : {
       "failures" : {
