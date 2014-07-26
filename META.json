@@ -80,11 +80,14 @@
       },
       "runtime" : {
          "requires" : {
+            "CPAN::Changes" : "0.30",
+            "CPAN::Changes::Group" : "0",
             "CPAN::Meta::Prereqs::Diff" : "0",
             "Carp" : "0",
             "Moo" : "0",
             "MooX::Lsub" : "0",
             "charnames" : "0",
+            "constant" : "0",
             "perl" : "5.008",
             "strict" : "0",
             "utf8" : "0",
@@ -100,6 +103,7 @@
             "Test::More" : "1.001003"
          },
          "requires" : {
+            "CPAN::Meta::Prereqs" : "0",
             "Encode" : "0",
             "ExtUtils::MakeMaker" : "0",
             "File::Spec" : "0",
@@ -121,7 +125,11 @@
    "release_status" : "stable",
    "version" : "0.001000",
    "x_BuiltWith" : {
+      "failures" : {
+         "CPAN::Changes::Group" : "Module::MetaData could not parse a version from /home/kent/perl5/perlbrew/perls/5.21.1-sdbm/lib/site_perl/5.21.1/CPAN/Changes/Group.pm"
+      },
       "modules" : {
+         "CPAN::Changes" : "0.30",
          "CPAN::Meta" : "2.141520",
          "CPAN::Meta::Prereqs" : "2.141520",
          "CPAN::Meta::Prereqs::Diff" : "0.001000",
@@ -177,10 +185,10 @@
          "File::Spec::Functions" : "3.48",
          "List::Util" : "1.39",
          "Moo" : "1.005000",
-         "MooX::Lsub" : "0.001001",
+         "MooX::Lsub" : "0.001002",
          "Pod::Coverage::TrustPod" : "0.100003",
          "Scalar::Util" : "1.39",
-         "Test::CPAN::Changes" : "0.28",
+         "Test::CPAN::Changes" : "0.30",
          "Test::CPAN::Meta" : "0.23",
          "Test::Differences" : "0.62",
          "Test::Kwalitee" : "1.19",
@@ -188,6 +196,7 @@
          "Test::Pod" : "1.48",
          "Test::Pod::Coverage" : "1.10",
          "charnames" : "1.41",
+         "constant" : "1.31",
          "strict" : "1.08",
          "utf8" : "1.14",
          "version" : "0.9908",
@@ -208,7 +217,7 @@
          "osname" : "linux"
       },
       "platform" : "linux",
-      "uname" : "Linux 3.15.2-aufs x86_64 GenuineIntel GNU/Linux"
+      "uname" : "Linux 3.15.5-aufs x86_64 GenuineIntel GNU/Linux"
    },
    "x_Dist_Zilla" : {
       "perl" : {

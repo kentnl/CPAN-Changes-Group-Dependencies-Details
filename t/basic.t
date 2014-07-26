@@ -18,8 +18,10 @@ for my $change (qw( Added Changed Upgrade Downgrade Removed )) {
     }
   }
 }
+use CPAN::Meta::Prereqs;
 
 my @prereqs = (
+  map { CPAN::Meta::Prereqs->new( $_ ) }
   {},
   { runtime   => { requires   => { 'Moo' => '0' } } },
   { runtime   => { requires   => { 'Moo' => '1.0' } } },
@@ -55,7 +57,7 @@ for my $old (@prereqs) {
       eq_or_diff( \@out, [], 'No Changes if old == new' );
     }
     else {
-      note explain { new => $new, old => $old };
+      note explain { new => $new->as_string_hash, old => $old->as_string_hash };
       note join qq[\n], map { Encode::encode( ':UTF-8', $_, Encode::FB_CROAK ) } @out;
       isnt( scalar @out, 0, 'Some changes if refaddr changes w/ all' );
     }

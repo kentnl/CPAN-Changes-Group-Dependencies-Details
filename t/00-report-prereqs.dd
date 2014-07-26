@@ -65,11 +65,14 @@ do { my $x = {
                     },
        'runtime' => {
                       'requires' => {
+                                      'CPAN::Changes' => '0.30',
+                                      'CPAN::Changes::Group' => '0',
                                       'CPAN::Meta::Prereqs::Diff' => '0',
                                       'Carp' => '0',
                                       'Moo' => '0',
                                       'MooX::Lsub' => '0',
                                       'charnames' => '0',
+                                      'constant' => '0',
                                       'perl' => '5.008',
                                       'strict' => '0',
                                       'utf8' => '0',
@@ -85,6 +88,7 @@ do { my $x = {
                                      'Test::More' => '1.001003'
                                    },
                    'requires' => {
+                                   'CPAN::Meta::Prereqs' => '0',
                                    'Encode' => '0',
                                    'ExtUtils::MakeMaker' => '0',
                                    'File::Spec' => '0',

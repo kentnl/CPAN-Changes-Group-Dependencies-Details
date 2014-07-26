@@ -15,7 +15,14 @@ SYNOPSIS
         change_type => 'Added',
         phase       => 'runtime',
         type        => 'requires',
-      )->attach_to($cpan_changes_release);
+      );
+  
+      my $release = CPAN::Changes::Release->new(
+        version => '0.01',
+        date    => '2014-07-26',
+      );
+
+      $release->attach_group( $group ) if $group->has_changes;
 
 DESCRIPTION
     This is simple an element of refactoring in my "dep_changes" script.
