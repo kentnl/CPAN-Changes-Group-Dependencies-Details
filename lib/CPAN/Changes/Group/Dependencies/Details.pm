@@ -438,11 +438,11 @@ If not specified, is generated from other attributes
 
   Added / runtime requires
 
-  |----------------------- change_type
-       |------------------ name_split
-          |--------------- phase
-                 |-------- name_type_split
-                  |------- type
+  |___|------------------- change_type
+       |_|---------------- name_split
+          |_____|--------- phase
+                 ||------- name_type_split
+                  |______| type
 
 =head1 AUTHOR
 

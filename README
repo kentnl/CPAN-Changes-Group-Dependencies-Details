@@ -116,11 +116,11 @@ ATTRIBUTES
 
       Added / runtime requires
 
-      |----------------------- change_type
-           |------------------ name_split
-              |--------------- phase
-                     |-------- name_type_split
-                      |------- type
+      |___|------------------- change_type
+           |_|---------------- name_split
+              |_____|--------- phase
+                     ||------- name_type_split
+                      |______| type
 
 AUTHOR
     Kent Fredric <kentfredric@gmail.com>
