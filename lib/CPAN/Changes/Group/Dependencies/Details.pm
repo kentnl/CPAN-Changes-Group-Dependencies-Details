@@ -130,17 +130,114 @@ if (STRICTMODE) {
 
 extends 'CPAN::Changes::Group';
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 has change_type => ( is => 'ro', required => 1, %{ $isa_checks->{change_type} } );
 has phase       => ( is => 'ro', required => 1, %{ $isa_checks->{phase} } );
 has type        => ( is => 'ro', required => 1, %{ $isa_checks->{type} } );
 
-lsub arrow_join           => sub { qq[\N{NO-BREAK SPACE}\N{RIGHTWARDS ARROW}\N{NO-BREAK SPACE}] };
+
+
+
+
+
+
+
+
+
+
+
+
+lsub new_prereqs => sub { croak q{required parameter <new_prereqs> missing} };
+lsub old_prereqs => sub { croak q{required parameter <old_prereqs> missing} };
+
+
+
+
+
+
+
+
+
+
+
+
+lsub arrow_join => sub { qq[\N{NO-BREAK SPACE}\N{RIGHTWARDS ARROW}\N{NO-BREAK SPACE}] };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lsub name_split      => sub { q[ / ] };
+lsub name_type_split => sub { q[ ] };
+
+lsub name => sub {
+  my ($self) = @_;
+  return $self->change_type . $self->name_split . $self->phase . $self->name_type_split . $self->type;
+};
+
+# Mostly internal plumbing attributes but should be ok for experts to work with
 lsub change_type_method   => sub { $valid_change_types->{ $_[0]->change_type }->{method} };
 lsub change_type_notation => sub { $valid_change_types->{ $_[0]->change_type }->{notation} };
-lsub name_split           => sub { q[ / ] };
-lsub name_type_split      => sub { q[ ] };
-lsub new_prereqs          => sub { croak q{required parameter <new_prereqs> missing} };
-lsub old_prereqs          => sub { croak q{required parameter <old_prereqs> missing} };
 
 lsub change_formatter => sub {
   my ($self) = @_;
@@ -158,15 +255,17 @@ lsub relevant_diffs => sub {
   return [ grep { $_->$method() } @{ $self->all_diffs } ];
 };
 
-lsub name => sub {
-  my ($self) = @_;
-  return $self->change_type . $self->name_split . $self->phase . $self->name_type_split . $self->type;
-};
-
 lsub prereqs_diff => sub {
   my ($self) = @_;
   return CPAN::Meta::Prereqs::Diff->new( old_prereqs => $self->old_prereqs, new_prereqs => $self->new_prereqs, );
 };
+
+
+
+
+
+
+
 
 sub has_changes {
   my ($self) = @_;
@@ -174,6 +273,21 @@ sub has_changes {
   return unless @{ $self->relevant_diffs };
   return 1;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 sub changes {
   my ($self) = @_;
@@ -226,6 +340,109 @@ This is simple an element of refactoring in my C<dep_changes> script.
 
 It is admittedly not very useful in its current incarnation due to needing quite a few instances
 to get anything done with them, but that's mostly due to design headaches about thinking of I<any> way to solve a few problems.
+
+=head1 METHODS
+
+=head2 C<has_changes>
+
+Returns true/false indicating whether or not C<relevant> changes were found between
+the two given C<_prereqs> properties.
+
+=head2 C<changes>
+
+Returns a list of change entries:
+
+  Added / Removed
+
+      Module::Name      # For unversioned module additions/removals
+      Module::Name 0.30 # For versioned
+
+  Changed / Upgrade / Downgrade
+
+      Module::Name <OLDREQ> → <NEWREQ>
+
+=head1 ATTRIBUTES
+
+=head2 C<change_type>
+
+B<REQUIRED:>
+One of the following indicating the type of change this group represents.
+
+  Added     : Dependencies are new to this phase
+  Changed   : The version component of this dependency changed in some way
+  Upgrade   : A newer version of this dependency is required.
+  Downgrade : The requirement of this dependency is no longer so stringent.
+  Removed   : A dependency previously in this phase was removed.
+
+=head2 C<phase>
+
+B<REQUIRED:>
+One of the following phases indicating the phase this group will pertain to
+
+  configure
+  build
+  runtime
+  test
+  develop
+
+=head2 C<type>
+
+B<REQUIRED:>
+One of the following types indicating the severity of the dependency this group will pertain to
+
+  requires
+  recommends
+  suggests
+  conflicts
+
+=head2 C<new_prereqs>
+
+B<LIKELY REQUIRED>:
+C<HashRef>,C<CPAN::Meta> or C<CPAN::Meta::Prereqs> structure for I<'new'> dependencies.
+
+=head2 C<old_prereqs>
+
+B<LIKELY REQUIRED>:
+C<HashRef>,C<CPAN::Meta> or C<CPAN::Meta::Prereqs> structure for I<'new'> dependencies.
+
+=head2 C<arrow_join>
+
+The delimiter to seperate change family entries.
+
+Default:
+
+  #\N{NO-BREAK SPACE}\N{RIGHTWARDS ARROW}\N{NO-BREAK SPACE}
+  q[ → ]
+
+=head2 C<name_split>
+
+Used to define C<name>.
+
+Default:
+
+  q[ / ]
+
+=head2 C<name_type_split>
+
+Used to seperate C<phase> and C<type> in C<name>
+
+Default:
+
+  q[ ]
+
+=head2 C<name>
+
+The name of the group.
+
+If not specified, is generated from other attributes
+
+  Added / runtime requires
+
+  |----------------------- change_type
+       |------------------ name_split
+          |--------------- phase
+                 |-------- name_type_split
+                  |------- type
 
 =head1 AUTHOR
 
