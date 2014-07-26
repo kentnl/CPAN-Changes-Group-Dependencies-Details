@@ -88,7 +88,7 @@ ATTRIBUTES
     structure for *'new'* dependencies.
 
   "arrow_join"
-    The delimiter to seperate change family entries.
+    The delimiter to separate change family entries.
 
     Default:
 

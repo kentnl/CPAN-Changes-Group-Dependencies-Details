@@ -407,7 +407,7 @@ C<HashRef>,C<CPAN::Meta> or C<CPAN::Meta::Prereqs> structure for I<'new'> depend
 
 =head2 C<arrow_join>
 
-The delimiter to seperate change family entries.
+The delimiter to separate change family entries.
 
 Default:
 
