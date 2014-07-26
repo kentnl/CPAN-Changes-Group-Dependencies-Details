@@ -18,6 +18,7 @@ use Carp qw( croak );
 use CPAN::Changes 0.30;
 use CPAN::Changes::Group;
 use CPAN::Meta::Prereqs::Diff;
+## no critic (ProhibitConstantPragma)
 use constant STRICTMODE => 1;
 use charnames ':full';
 
@@ -54,14 +55,14 @@ use charnames ':full';
 
 my $formatters = {
   'toggle' => sub {
-    sub {
+    return sub {
       my $diff   = shift;
       my $output = $diff->module;
       if ( $diff->requirement ne '0' ) {
         $output .= q[ ] . $diff->requirement;
       }
       return $output;
-      }
+    };
   },
   'change' => sub {
     my $self       = shift;
@@ -105,7 +106,7 @@ if (STRICTMODE) {
       local $" = q[, ];
       croak "change_type must be one of <@{ keys %{$valid_change_types } }>, not $_[0]"
         unless exists $valid_change_types->{ $_[0] };
-    }
+    },
   };
 
   my $valid_phases = { map { $_ => 1 } qw( configure build runtime test develop ) };
@@ -114,7 +115,7 @@ if (STRICTMODE) {
     isa => sub {
       local $" = q[, ];
       croak "phase must be one of <@{ keys %{$valid_phases } }>, not $_[0]" unless exists $valid_phases->{ $_[0] };
-    }
+    },
   };
 
   my $valid_types = { map { $_ => 1 } qw( requires recommends suggests conflicts ) };
@@ -123,7 +124,7 @@ if (STRICTMODE) {
     isa => sub {
       local $" = q[, ];
       croak "type must be one of <@{ keys %{$valid_types } }>, not $_[0]" unless exists $valid_types->{ $_[0] };
-    }
+    },
   };
 }
 
