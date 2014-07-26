@@ -424,7 +424,7 @@ Default:
 
 =head2 C<name_type_split>
 
-Used to seperate C<phase> and C<type> in C<name>
+Used to separate C<phase> and C<type> in C<name>
 
 Default:
 

@@ -103,7 +103,7 @@ ATTRIBUTES
       q[ / ]
 
   "name_type_split"
-    Used to seperate "phase" and "type" in "name"
+    Used to separate "phase" and "type" in "name"
 
     Default:
 
