@@ -88,6 +88,7 @@ do { my $x = {
                                      'Test::More' => '1.001003'
                                    },
                    'requires' => {
+                                   'CPAN::Changes::Release' => '0',
                                    'CPAN::Meta::Prereqs' => '0',
                                    'Encode' => '0',
                                    'ExtUtils::MakeMaker' => '0',

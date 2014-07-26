@@ -103,6 +103,7 @@
             "Test::More" : "1.001003"
          },
          "requires" : {
+            "CPAN::Changes::Release" : "0",
             "CPAN::Meta::Prereqs" : "0",
             "Encode" : "0",
             "ExtUtils::MakeMaker" : "0",
@@ -126,7 +127,8 @@
    "version" : "0.001000",
    "x_BuiltWith" : {
       "failures" : {
-         "CPAN::Changes::Group" : "Module::MetaData could not parse a version from /home/kent/perl5/perlbrew/perls/5.21.1-sdbm/lib/site_perl/5.21.1/CPAN/Changes/Group.pm"
+         "CPAN::Changes::Group" : "Module::MetaData could not parse a version from /home/kent/perl5/perlbrew/perls/5.21.1-sdbm/lib/site_perl/5.21.1/CPAN/Changes/Group.pm",
+         "CPAN::Changes::Release" : "Module::MetaData could not parse a version from /home/kent/perl5/perlbrew/perls/5.21.1-sdbm/lib/site_perl/5.21.1/CPAN/Changes/Release.pm"
       },
       "modules" : {
          "CPAN::Changes" : "0.30",
