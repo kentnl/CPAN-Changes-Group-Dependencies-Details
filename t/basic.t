@@ -21,8 +21,7 @@ for my $change (qw( Added Changed Upgrade Downgrade Removed )) {
 use CPAN::Meta::Prereqs;
 
 my @prereqs = (
-  map { CPAN::Meta::Prereqs->new( $_ ) }
-  {},
+  map { CPAN::Meta::Prereqs->new($_) }{},
   { runtime   => { requires   => { 'Moo' => '0' } } },
   { runtime   => { requires   => { 'Moo' => '1.0' } } },
   { runtime   => { requires   => { 'Moo' => '2.0' } } },
