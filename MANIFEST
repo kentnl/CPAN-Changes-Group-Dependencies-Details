@@ -13,6 +13,10 @@ dist.ini
 dist.ini.meta
 lib/CPAN/Changes/Group/Dependencies/Details.pm
 maint/perlcritic.rc.gen.pl
+misc/Changes.deps
+misc/Changes.deps.all
+misc/Changes.deps.dev
+misc/Changes.deps.opt
 misc/perlcritic.deps
 perlcritic.rc
 t/00-compile/lib_CPAN_Changes_Group_Dependencies_Details_pm.t

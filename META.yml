@@ -17,7 +17,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: '6.30'
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 5.019, CPAN::Meta::Converter version 2.141520'
+generated_by: 'Dist::Zilla version 5.019, CPAN::Meta::Converter version 2.142060'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -26,7 +26,7 @@ name: CPAN-Changes-Group-Dependencies-Details
 provides:
   CPAN::Changes::Group::Dependencies::Details:
     file: lib/CPAN/Changes/Group/Dependencies/Details.pm
-    version: '0.001000'
+    version: '0.001001'
 requires:
   CPAN::Changes: '0.30'
   CPAN::Changes::Group: '0'
@@ -44,15 +44,15 @@ resources:
   bugtracker: https://github.com/kentnl/CPAN-Changes-Group-Dependencies-Details/issues
   homepage: https://github.com/kentnl/CPAN-Changes-Group-Dependencies-Details
   repository: https://github.com/kentnl/CPAN-Changes-Group-Dependencies-Details.git
-version: '0.001000'
+version: '0.001001'
 x_BuiltWith:
   failures:
     CPAN::Changes::Group: 'Module::MetaData could not parse a version from /home/kent/perl5/perlbrew/perls/5.21.1-sdbm/lib/site_perl/5.21.1/CPAN/Changes/Group.pm'
     CPAN::Changes::Release: 'Module::MetaData could not parse a version from /home/kent/perl5/perlbrew/perls/5.21.1-sdbm/lib/site_perl/5.21.1/CPAN/Changes/Release.pm'
   modules:
     CPAN::Changes: '0.30'
-    CPAN::Meta: '2.141520'
-    CPAN::Meta::Prereqs: '2.141520'
+    CPAN::Meta: '2.142060'
+    CPAN::Meta::Prereqs: '2.142060'
     CPAN::Meta::Prereqs::Diff: '0.001000'
     CPAN::Meta::Requirements: '2.125'
     Carp: '1.34'
@@ -439,7 +439,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: ~
           signed: 0
-          tag: 0.001000-source
+          tag: 0.001001-source
           tag_format: '%v-source'
           tag_message: v%v
           time_zone: local
@@ -493,7 +493,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: releases
           signed: 0
-          tag: '0.001000'
+          tag: '0.001001'
           tag_format: '%v'
           tag_message: v%v
           time_zone: local

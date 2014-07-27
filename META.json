@@ -4,7 +4,7 @@
       "Kent Fredric <kentfredric@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 5.019, CPAN::Meta::Converter version 2.141520",
+   "generated_by" : "Dist::Zilla version 5.019, CPAN::Meta::Converter version 2.142060",
    "license" : [
       "perl_5"
    ],
@@ -120,7 +120,7 @@
    "provides" : {
       "CPAN::Changes::Group::Dependencies::Details" : {
          "file" : "lib/CPAN/Changes/Group/Dependencies/Details.pm",
-         "version" : "0.001000"
+         "version" : "0.001001"
       }
    },
    "release_status" : "stable",
@@ -135,7 +135,7 @@
          "web" : "https://github.com/kentnl/CPAN-Changes-Group-Dependencies-Details"
       }
    },
-   "version" : "0.001000",
+   "version" : "0.001001",
    "x_BuiltWith" : {
       "failures" : {
          "CPAN::Changes::Group" : "Module::MetaData could not parse a version from /home/kent/perl5/perlbrew/perls/5.21.1-sdbm/lib/site_perl/5.21.1/CPAN/Changes/Group.pm",
@@ -143,8 +143,8 @@
       },
       "modules" : {
          "CPAN::Changes" : "0.30",
-         "CPAN::Meta" : "2.141520",
-         "CPAN::Meta::Prereqs" : "2.141520",
+         "CPAN::Meta" : "2.142060",
+         "CPAN::Meta::Prereqs" : "2.142060",
          "CPAN::Meta::Prereqs::Diff" : "0.001000",
          "CPAN::Meta::Requirements" : "2.125",
          "Carp" : "1.34",
@@ -627,7 +627,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : null,
                   "signed" : 0,
-                  "tag" : "0.001000-source",
+                  "tag" : "0.001001-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
@@ -698,7 +698,7 @@
                "Dist::Zilla::Plugin::Git::Tag" : {
                   "branch" : "releases",
                   "signed" : 0,
-                  "tag" : "0.001000",
+                  "tag" : "0.001001",
                   "tag_format" : "%v",
                   "tag_message" : "v%v",
                   "time_zone" : "local"
