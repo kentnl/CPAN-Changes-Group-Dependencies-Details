@@ -244,8 +244,15 @@ lsub change_formatter => sub {
   return $formatters->{ $self->change_type_notation }->($self);
 };
 
+lsub prereqs_diff => sub {
+  my ($self) = @_;
+  return CPAN::Meta::Prereqs::Diff->new( old_prereqs => $self->old_prereqs, new_prereqs => $self->new_prereqs, );
+};
+
 lsub all_diffs => sub {
   my ($self) = @_;
+  ## Note: this filters here because the differ is faster that way
+  ## But end users may still pass unfiltered copies of all_diffs
   return [ $self->prereqs_diff->diff( phases => [ $self->phase ], types => [ $self->type ], ) ];
 };
 
@@ -254,12 +261,11 @@ lsub relevant_diffs => sub {
   my $method = $self->change_type_method;
   my $phase  = $self->phase;
   my $type   = $self->type;
-  return [ grep { $_->$method() and $_->phase eq $phase and $_->type eq $type } @{ $self->all_diffs } ];
-};
 
-lsub prereqs_diff => sub {
-  my ($self) = @_;
-  return CPAN::Meta::Prereqs::Diff->new( old_prereqs => $self->old_prereqs, new_prereqs => $self->new_prereqs, );
+  # This phase filters the values from all_diffs
+  # which should mostly filters by change type, but also filters on criteria
+  # in case of all_diffs being raw.
+  return [ grep { $_->$method() and $_->phase eq $phase and $_->type eq $type } @{ $self->all_diffs } ];
 };
 
 =method C<has_changes>
