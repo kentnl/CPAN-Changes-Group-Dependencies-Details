@@ -17,7 +17,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: '6.30'
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 5.019, CPAN::Meta::Converter version 2.141520'
+generated_by: 'Dist::Zilla version 5.019, CPAN::Meta::Converter version 2.142060'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -51,8 +51,8 @@ x_BuiltWith:
     CPAN::Changes::Release: 'Module::MetaData could not parse a version from /home/kent/perl5/perlbrew/perls/5.21.1-sdbm/lib/site_perl/5.21.1/CPAN/Changes/Release.pm'
   modules:
     CPAN::Changes: '0.30'
-    CPAN::Meta: '2.141520'
-    CPAN::Meta::Prereqs: '2.141520'
+    CPAN::Meta: '2.142060'
+    CPAN::Meta::Prereqs: '2.142060'
     CPAN::Meta::Prereqs::Diff: '0.001000'
     CPAN::Meta::Requirements: '2.125'
     Carp: '1.34'

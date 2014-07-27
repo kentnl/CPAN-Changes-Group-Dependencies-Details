@@ -4,7 +4,7 @@
       "Kent Fredric <kentfredric@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 5.019, CPAN::Meta::Converter version 2.141520",
+   "generated_by" : "Dist::Zilla version 5.019, CPAN::Meta::Converter version 2.142060",
    "license" : [
       "perl_5"
    ],
@@ -143,8 +143,8 @@
       },
       "modules" : {
          "CPAN::Changes" : "0.30",
-         "CPAN::Meta" : "2.141520",
-         "CPAN::Meta::Prereqs" : "2.141520",
+         "CPAN::Meta" : "2.142060",
+         "CPAN::Meta::Prereqs" : "2.142060",
          "CPAN::Meta::Prereqs::Diff" : "0.001000",
          "CPAN::Meta::Requirements" : "2.125",
          "Carp" : "1.34",

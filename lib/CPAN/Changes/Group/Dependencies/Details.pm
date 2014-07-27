@@ -252,7 +252,9 @@ lsub all_diffs => sub {
 lsub relevant_diffs => sub {
   my ($self) = @_;
   my $method = $self->change_type_method;
-  return [ grep { $_->$method() } @{ $self->all_diffs } ];
+  my $phase  = $self->phase;
+  my $type   = $self->type;
+  return [ grep { $_->$method() and $_->phase eq $phase and $_->type eq $type } @{ $self->all_diffs } ];
 };
 
 lsub prereqs_diff => sub {
