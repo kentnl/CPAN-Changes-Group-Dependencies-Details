@@ -1,6 +1,8 @@
 Release history for CPAN-Changes-Group-Dependencies-Details
 
 {{$NEXT}}
+ [Bugfix]
+ - Actually filter relevant results per section.
 
 0.001000 2014-07-26T09:53:08Z
  - First version.
