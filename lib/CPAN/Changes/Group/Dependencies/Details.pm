@@ -5,7 +5,7 @@ use utf8;
 
 package CPAN::Changes::Group::Dependencies::Details;
 
-our $VERSION = '0.001001';
+our $VERSION = '0.001002';
 
 # ABSTRACT: Full details of dependency changes.
 
