@@ -26,7 +26,7 @@ name: CPAN-Changes-Group-Dependencies-Details
 provides:
   CPAN::Changes::Group::Dependencies::Details:
     file: lib/CPAN/Changes/Group/Dependencies/Details.pm
-    version: '0.001001'
+    version: '0.001002'
 requires:
   CPAN::Changes: '0.30'
   CPAN::Changes::Group: '0'
@@ -44,7 +44,7 @@ resources:
   bugtracker: https://github.com/kentnl/CPAN-Changes-Group-Dependencies-Details/issues
   homepage: https://github.com/kentnl/CPAN-Changes-Group-Dependencies-Details
   repository: https://github.com/kentnl/CPAN-Changes-Group-Dependencies-Details.git
-version: '0.001001'
+version: '0.001002'
 x_BuiltWith:
   failures:
     CPAN::Changes::Group: 'Module::MetaData could not parse a version from /home/kent/perl5/perlbrew/perls/5.21.1-sdbm/lib/site_perl/5.21.1/CPAN/Changes/Group.pm'
@@ -439,7 +439,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: ~
           signed: 0
-          tag: 0.001001-source
+          tag: 0.001002-source
           tag_format: '%v-source'
           tag_message: v%v
           time_zone: local
@@ -493,7 +493,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: releases
           signed: 0
-          tag: '0.001001'
+          tag: '0.001002'
           tag_format: '%v'
           tag_message: v%v
           time_zone: local
