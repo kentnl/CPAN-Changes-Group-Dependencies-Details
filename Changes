@@ -1,6 +1,6 @@
 Release history for CPAN-Changes-Group-Dependencies-Details
 
-0.001001 2014-07-27T05:13:53Z
+0.001001 2014-07-27T06:13:09Z
  [Bugfix]
  - Actually filter relevant results per section.
 
