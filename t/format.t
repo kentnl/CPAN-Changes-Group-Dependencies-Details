@@ -20,7 +20,10 @@ my $release = CPAN::Changes::Release->new(
 
 my $details = CPAN::Changes::Group::Dependencies::Details->new(
   old_prereqs => {},
-  new_prereqs => { runtime => { requires => { 'Moo' => '1.0' } } },
+  new_prereqs => {
+    runtime => { requires => { 'Moo' => '1.0' } },
+    develop => { suggests => { 'Moo' => '1.2' } },
+  },
   change_type => 'Added',
   phase       => 'runtime',
   type        => 'requires',
