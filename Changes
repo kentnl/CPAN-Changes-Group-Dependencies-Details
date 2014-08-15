@@ -16,7 +16,7 @@ Release history for CPAN-Changes-Group-Dependencies-Details
  - Improve source side POD to reduce build side whitespace
 
  [Tests]
- - Update Test::ReportVersions
+ - Update Test::ReportPrereqs
 
 0.001001 2014-07-27T06:13:09Z
  [Bugfix]
