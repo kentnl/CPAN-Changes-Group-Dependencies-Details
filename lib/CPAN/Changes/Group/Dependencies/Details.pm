@@ -22,37 +22,6 @@ use CPAN::Meta::Prereqs::Diff;
 use constant STRICTMODE => 1;
 use charnames ':full';
 
-=head1 SYNOPSIS
-
-  my $old_prereqs => CPAN::Meta->load_file('Dist-Foo-1.01/META.json')->effective_prereqs,
-  my $new_prereqs => CPAN::Meta->load_file('Dist-Foo-1.01/META.json')->effective_prereqs,
-
-  my $group =  CPAN::Changes::Group::Dependencies::Details->new(
-    old_prereqs => $old_prereqs,
-    new_prereqs => $new_prereqs,
-    change_type => 'Added',
-    phase       => 'runtime',
-    type        => 'requires',
-  );
-
-  my $release = CPAN::Changes::Release->new(
-    version => '0.01',
-    date    => '2014-07-26',
-  );
-
-  $release->attach_group( $group ) if $group->has_changes;
-
-=cut
-
-=head1 DESCRIPTION
-
-This is simple an element of refactoring in my C<dep_changes> script.
-
-It is admittedly not very useful in its current incarnation due to needing quite a few instances
-to get anything done with them, but that's mostly due to design headaches about thinking of I<any> way to solve a few problems.
-
-=cut
-
 my $formatters = {
   'toggle' => sub {
     return sub {
@@ -141,6 +110,10 @@ One of the following indicating the type of change this group represents.
   Downgrade : The requirement of this dependency is no longer so stringent.
   Removed   : A dependency previously in this phase was removed.
 
+=cut
+
+has change_type => ( is => 'ro', required => 1, %{ $isa_checks->{change_type} } );
+
 =attr C<phase>
 
 B<REQUIRED:>
@@ -151,6 +124,10 @@ One of the following phases indicating the phase this group will pertain to
   runtime
   test
   develop
+
+=cut
+
+has phase => ( is => 'ro', required => 1, %{ $isa_checks->{phase} } );
 
 =attr C<type>
 
@@ -164,14 +141,16 @@ One of the following types indicating the severity of the dependency this group 
 
 =cut
 
-has change_type => ( is => 'ro', required => 1, %{ $isa_checks->{change_type} } );
-has phase       => ( is => 'ro', required => 1, %{ $isa_checks->{phase} } );
-has type        => ( is => 'ro', required => 1, %{ $isa_checks->{type} } );
+has type => ( is => 'ro', required => 1, %{ $isa_checks->{type} } );
 
 =attr C<new_prereqs>
 
 B<LIKELY REQUIRED>:
 C<HashRef>,C<CPAN::Meta> or C<CPAN::Meta::Prereqs> structure for I<'new'> dependencies.
+
+=cut
+
+lsub new_prereqs => sub { croak q{required parameter <new_prereqs> missing} };
 
 =attr C<old_prereqs>
 
@@ -180,7 +159,6 @@ C<HashRef>,C<CPAN::Meta> or C<CPAN::Meta::Prereqs> structure for I<'new'> depend
 
 =cut
 
-lsub new_prereqs => sub { croak q{required parameter <new_prereqs> missing} };
 lsub old_prereqs => sub { croak q{required parameter <old_prereqs> missing} };
 
 =attr C<arrow_join>
@@ -204,6 +182,10 @@ Default:
 
   q[ / ]
 
+=cut
+
+lsub name_split => sub { q[ / ] };
+
 =attr C<name_type_split>
 
 Used to separate C<phase> and C<type> in C<name>
@@ -211,6 +193,10 @@ Used to separate C<phase> and C<type> in C<name>
 Default:
 
   q[ ]
+
+=cut
+
+lsub name_type_split => sub { q[ ] };
 
 =attr C<name>
 
@@ -226,9 +212,6 @@ If not specified, is generated from other attributes
                  ||------- name_type_split
                   |______| type
 =cut
-
-lsub name_split      => sub { q[ / ] };
-lsub name_type_split => sub { q[ ] };
 
 lsub name => sub {
   my ($self) = @_;
@@ -307,3 +290,34 @@ sub changes {
 no Moo;
 
 1;
+
+=head1 SYNOPSIS
+
+  my $old_prereqs => CPAN::Meta->load_file('Dist-Foo-1.01/META.json')->effective_prereqs,
+  my $new_prereqs => CPAN::Meta->load_file('Dist-Foo-1.01/META.json')->effective_prereqs,
+
+  my $group =  CPAN::Changes::Group::Dependencies::Details->new(
+    old_prereqs => $old_prereqs,
+    new_prereqs => $new_prereqs,
+    change_type => 'Added',
+    phase       => 'runtime',
+    type        => 'requires',
+  );
+
+  my $release = CPAN::Changes::Release->new(
+    version => '0.01',
+    date    => '2014-07-26',
+  );
+
+  $release->attach_group( $group ) if $group->has_changes;
+
+=cut
+
+=head1 DESCRIPTION
+
+This is simple an element of refactoring in my C<dep_changes> script.
+
+It is admittedly not very useful in its current incarnation due to needing quite a few instances
+to get anything done with them, but that's mostly due to design headaches about thinking of I<any> way to solve a few problems.
+
+=cut
