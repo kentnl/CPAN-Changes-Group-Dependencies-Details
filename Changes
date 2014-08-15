@@ -1,6 +1,6 @@
 Release history for CPAN-Changes-Group-Dependencies-Details
 
-0.001002 2014-08-15T04:55:36Z
+0.001002 2014-08-15T06:14:51Z
  [00 Trivial]
  - no code changes.
  - augment tests.
@@ -16,7 +16,7 @@ Release history for CPAN-Changes-Group-Dependencies-Details
  - Improve source side POD to reduce build side whitespace
 
  [Tests]
- - Update Test::ReportVersions
+ - Update Test::ReportPrereqs
 
 0.001001 2014-07-27T06:13:09Z
  [Bugfix]
