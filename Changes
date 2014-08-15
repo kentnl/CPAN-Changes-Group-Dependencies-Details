@@ -2,13 +2,17 @@ Release history for CPAN-Changes-Group-Dependencies-Details
 
 {{$NEXT}}
  [00 Trivial]
- - Update Test::ReportVersions
+ - no code changes.
+ - augment tests.
 
  [Dependencies::Stats]
  - Dependencies changed since 0.001001, see misc/*.deps* for details
  - configure: ↓1
- - develop: (suggests: ↑1)
+ - develop: +1 (suggests: ↑1)
  - test: -3 (recommends: ↑1 -2)
+
+ [Tests]
+ - Update Test::ReportVersions
 
 0.001001 2014-07-27T06:13:09Z
  [Bugfix]
