@@ -5,7 +5,7 @@ use utf8;
 
 package CPAN::Changes::Group::Dependencies::Details;
 
-our $VERSION = '0.001001';
+our $VERSION = '0.001002';
 
 # ABSTRACT: Full details of dependency changes.
 
@@ -21,37 +21,6 @@ use CPAN::Meta::Prereqs::Diff;
 ## no critic (ProhibitConstantPragma)
 use constant STRICTMODE => 1;
 use charnames ':full';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 my $formatters = {
   'toggle' => sub {
@@ -143,35 +112,36 @@ extends 'CPAN::Changes::Group';
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 has change_type => ( is => 'ro', required => 1, %{ $isa_checks->{change_type} } );
-has phase       => ( is => 'ro', required => 1, %{ $isa_checks->{phase} } );
-has type        => ( is => 'ro', required => 1, %{ $isa_checks->{type} } );
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+has phase => ( is => 'ro', required => 1, %{ $isa_checks->{phase} } );
+
+
+
+
+
+
+
+
+
+
+
+
+
+has type => ( is => 'ro', required => 1, %{ $isa_checks->{type} } );
 
 
 
@@ -181,6 +151,14 @@ has type        => ( is => 'ro', required => 1, %{ $isa_checks->{type} } );
 
 
 lsub new_prereqs => sub { croak q{required parameter <new_prereqs> missing} };
+
+
+
+
+
+
+
+
 lsub old_prereqs => sub { croak q{required parameter <old_prereqs> missing} };
 
 
@@ -206,6 +184,7 @@ lsub arrow_join => sub { qq[\N{NO-BREAK SPACE}\N{RIGHTWARDS ARROW}\N{NO-BREAK SP
 
 
 
+lsub name_split => sub { q[ / ] };
 
 
 
@@ -217,18 +196,22 @@ lsub arrow_join => sub { qq[\N{NO-BREAK SPACE}\N{RIGHTWARDS ARROW}\N{NO-BREAK SP
 
 
 
-
-
-
-
-
-
-
-
-
-
-lsub name_split      => sub { q[ / ] };
 lsub name_type_split => sub { q[ ] };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 lsub name => sub {
   my ($self) = @_;
@@ -320,7 +303,7 @@ CPAN::Changes::Group::Dependencies::Details - Full details of dependency changes
 
 =head1 VERSION
 
-version 0.001001
+version 0.001002
 
 =head1 SYNOPSIS
 
