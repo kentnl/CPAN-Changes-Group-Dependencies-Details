@@ -11,7 +11,7 @@ use ExtUtils::MakeMaker ;
 
 my %WriteMakefileArgs = (
   "ABSTRACT" => "Full details of dependency changes.",
-  "AUTHOR" => "Kent Fredric <kentfredric\@gmail.com>",
+  "AUTHOR" => "Kent Fredric <kentnl\@cpan.org>",
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => 0
   },
@@ -42,7 +42,7 @@ my %WriteMakefileArgs = (
     "Test::More" => "0.89",
     "if" => 0
   },
-  "VERSION" => "0.001002",
+  "VERSION" => "0.001003",
   "test" => {
     "TESTS" => "t/*.t t/00-compile/*.t"
   }
