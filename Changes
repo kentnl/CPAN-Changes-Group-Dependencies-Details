@@ -1,6 +1,6 @@
 Release history for CPAN-Changes-Group-Dependencies-Details
 
-0.001003 2014-08-16T00:16:29Z
+0.001003 2014-08-30T10:41:47Z
  [Dependencies::Stats]
  - Dependencies changed since 0.001002, see misc/*.deps* for details
  - develop: +1 ↑1 (suggests: ↑2)

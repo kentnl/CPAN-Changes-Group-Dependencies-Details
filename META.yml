@@ -1,7 +1,7 @@
 ---
 abstract: 'Full details of dependency changes.'
 author:
-  - 'Kent Fredric <kentfredric@gmail.com>'
+  - 'Kent Fredric <kentnl@cpan.org>'
 build_requires:
   CPAN::Changes::Release: '0'
   CPAN::Meta::Prereqs: '0'
