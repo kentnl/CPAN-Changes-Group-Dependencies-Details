@@ -510,9 +510,9 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::Prereqs
       config:
         Dist::Zilla::Plugin::Prereqs:
-          phase: runtime
-          type: requires
-      name: Prereqs
+          phase: test
+          type: recommends
+      name: TestRecommends
       version: '5.037'
     -
       class: Dist::Zilla::Plugin::FinderCode

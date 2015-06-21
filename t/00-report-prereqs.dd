@@ -95,6 +95,7 @@ do { my $x = {
                     },
        'test' => {
                    'recommends' => {
+                                     'CPAN::Changes' => '0.400002',
                                      'CPAN::Meta' => '2.120900',
                                      'ExtUtils::MakeMaker' => '7.00',
                                      'Test::More' => '0.99'

@@ -1,11 +1,16 @@
 Release history for CPAN-Changes-Group-Dependencies-Details
 
-0.001004 2015-06-21T19:26:59Z 4b613f1
+0.001004 2015-06-21T19:29:52Z 640e3dc
+ [BugFix]
+ - Guard against changes in whitespace schemes in future/past CPAN::Changes versions.
+ - Thansk to Slaven Rezić for reporting
+ - closes #1
+
  [Dependencies::Stats]
  - Dependencies changed since 0.001003, see misc/*.deps* for details
  - configure: +1 (recommends: ↑1)
  - develop: +8 ↑3 -2 (recommends: +1, suggests: ↑2)
- - runtime: (recommends: +1)
+ - runtime: ↓1 -1 (recommends: +1)
  - test: +1 (recommends: ↑1 ↓1)
 
  [Minor]
