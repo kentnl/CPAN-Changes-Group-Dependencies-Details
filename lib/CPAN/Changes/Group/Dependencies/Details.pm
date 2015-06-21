@@ -4,7 +4,7 @@ use warnings;
 
 package CPAN::Changes::Group::Dependencies::Details;
 
-our $VERSION = '0.001004';
+our $VERSION = '0.001005';
 
 # ABSTRACT: Full details of dependency changes.
 
