@@ -4,6 +4,9 @@ This file contains changes in OPTIONAL dependencies for standard CPAN phases (co
  [Added / runtime recommends]
  - Moo 1.000008
 
+ [Added / test recommends]
+ - CPAN::Changes 0.400002
+
  [Changed / configure recommends]
  - ExtUtils::MakeMaker 6.98 → 7.00
 

@@ -20,4 +20,5 @@ srcreadme         = mkdn
 ; twitter_extra_hash_tags =
 ; auto_prereqs_skip = File::Find
 
-[Prereqs]
+[Prereqs / TestRecommends]
+CPAN::Changes = 0.400002
