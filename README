@@ -1,134 +1,33 @@
-NAME
-    CPAN::Changes::Group::Dependencies::Details - Full details of dependency
-    changes.
+CPAN::Changes::Group::Dependencies::Details
 
-VERSION
-    version 0.001003
+This is simple an element of refactoring in my "dep_changes" script.
 
-SYNOPSIS
-      my $old_prereqs => CPAN::Meta->load_file('Dist-Foo-1.01/META.json')->effective_prereqs,
-      my $new_prereqs => CPAN::Meta->load_file('Dist-Foo-1.01/META.json')->effective_prereqs,
+It is admittedly not very useful in its current incarnation due to
+needing quite a few instances to get anything done with them, but that's
+mostly due to design headaches about thinking of *any* way to solve a
+few problems.
 
-      my $group =  CPAN::Changes::Group::Dependencies::Details->new(
-        old_prereqs => $old_prereqs,
-        new_prereqs => $new_prereqs,
-        change_type => 'Added',
-        phase       => 'runtime',
-        type        => 'requires',
-      );
+INSTALLATION
 
-      my $release = CPAN::Changes::Release->new(
-        version => '0.01',
-        date    => '2014-07-26',
-      );
+This is a Perl module distribution. It should be installed with whichever
+tool you use to manage your installation of Perl, e.g. any of
 
-      $release->attach_group( $group ) if $group->has_changes;
+  cpanm .
+  cpan  .
+  cpanp -i .
 
-DESCRIPTION
-    This is simple an element of refactoring in my "dep_changes" script.
+Consult http://www.cpan.org/modules/INSTALL.html for further instruction.
+Should you wish to install this module manually, the procedure is
 
-    It is admittedly not very useful in its current incarnation due to
-    needing quite a few instances to get anything done with them, but that's
-    mostly due to design headaches about thinking of *any* way to solve a
-    few problems.
-
-METHODS
-  "has_changes"
-    Returns true/false indicating whether or not "relevant" changes were
-    found between the two given "_prereqs" properties.
-
-  "changes"
-    Returns a list of change entries:
-
-      Added / Removed
-
-          Module::Name      # For unversioned module additions/removals
-          Module::Name 0.30 # For versioned
-
-      Changed / Upgrade / Downgrade
-
-          Module::Name <OLDREQ> → <NEWREQ>
-
-ATTRIBUTES
-  "change_type"
-    REQUIRED: One of the following indicating the type of change this group
-    represents.
-
-      Added     : Dependencies are new to this phase
-      Changed   : The version component of this dependency changed in some way
-      Upgrade   : A newer version of this dependency is required.
-      Downgrade : The requirement of this dependency is no longer so stringent.
-      Removed   : A dependency previously in this phase was removed.
-
-  "phase"
-    REQUIRED: One of the following phases indicating the phase this group
-    will pertain to
-
-      configure
-      build
-      runtime
-      test
-      develop
-
-  "type"
-    REQUIRED: One of the following types indicating the severity of the
-    dependency this group will pertain to
-
-      requires
-      recommends
-      suggests
-      conflicts
-
-  "new_prereqs"
-    LIKELY REQUIRED: "HashRef","CPAN::Meta" or "CPAN::Meta::Prereqs"
-    structure for *'new'* dependencies.
-
-  "old_prereqs"
-    LIKELY REQUIRED: "HashRef","CPAN::Meta" or "CPAN::Meta::Prereqs"
-    structure for *'new'* dependencies.
-
-  "arrow_join"
-    The delimiter to separate change family entries.
-
-    Default:
-
-      #\N{NO-BREAK SPACE}\N{RIGHTWARDS ARROW}\N{NO-BREAK SPACE}
-      q[ → ]
-
-  "name_split"
-    Used to define "name".
-
-    Default:
-
-      q[ / ]
-
-  "name_type_split"
-    Used to separate "phase" and "type" in "name"
-
-    Default:
-
-      q[ ]
-
-  "name"
-    The name of the group.
-
-    If not specified, is generated from other attributes
-
-      Added / runtime requires
-
-      |___|------------------- change_type
-           |_|---------------- name_split
-              |_____|--------- phase
-                     ||------- name_type_split
-                      |______| type
-
-AUTHOR
-    Kent Fredric <kentnl@cpan.org>
+  perl Makefile.PL
+  make
+  make test
+  make install
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2014 by Kent Fredric
-    <kentfredric@gmail.com>.
 
-    This is free software; you can redistribute it and/or modify it under
-    the same terms as the Perl 5 programming language system itself.
+This software is copyright (c) 2015 by Kent Fredric
+<kentfredric@gmail.com>.
 
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.

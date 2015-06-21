@@ -7,7 +7,23 @@ use Test::More;
 # CREATED: 07/26/14 20:47:10 by Kent Fredric (kentnl) <kentfredric@gmail.com>
 # ABSTRACT: Test format is expected
 
-use CPAN::Changes 0.30;
+use CPAN::Changes;
+
+BEGIN {
+  my $sample_version = '0.400002';
+  my $sample         = <<'EOF';
+1.7.5 2013-08-01T09:48:11Z
+ [Group]
+ - Child Entry Line 1
+ - Child Entry Line 2
+EOF
+
+  return if CPAN::Changes->load_string($sample)->serialize eq $sample;
+  plan
+    skip_all => sprintf "Serialization scheme of CPAN::Changes %s is different to that of %s",
+    $CPAN::Changes::VERSION, $sample_version;
+}
+
 use CPAN::Changes::Release;
 use CPAN::Changes::Group;
 use CPAN::Meta::Prereqs::Diff;
