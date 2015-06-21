@@ -20,6 +20,9 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  [Added / runtime recommends]
  - Moo 1.000008
 
+ [Added / test recommends]
+ - CPAN::Changes 0.400002
+
  [Added / test requires]
  - perl 5.006
 
