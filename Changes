@@ -1,6 +1,12 @@
 Release history for CPAN-Changes-Group-Dependencies-Details
 
 {{$NEXT}}
+ [Dependencies::Stats]
+ - Dependencies changed since 0.001003, see misc/*.deps* for details
+ - configure: +1 (recommends: ↑1)
+ - develop: +8 ↑3 -2 (recommends: +1, suggests: ↑2)
+ - runtime: (recommends: +1)
+ - test: +1 (recommends: ↑1 ↓1)
 
 0.001003 2014-08-30T10:45:12Z
  [00 Trivial]
@@ -38,4 +44,3 @@ Release history for CPAN-Changes-Group-Dependencies-Details
 
 0.001000 2014-07-26T09:53:08Z
  - First version.
-
