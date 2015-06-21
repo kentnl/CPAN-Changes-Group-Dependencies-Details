@@ -1,10 +1,15 @@
 Release history for CPAN-Changes-Group-Dependencies-Details
 
-0.001004 2014-08-30T10:59:56Z 6304500
+0.001004 2015-06-21T19:26:59Z 4b613f1
  [Dependencies::Stats]
  - Dependencies changed since 0.001003, see misc/*.deps* for details
- - develop: (suggests: ↑1)
- - test: (recommends: ↑1)
+ - configure: +1 (recommends: ↑1)
+ - develop: +8 ↑3 -2 (recommends: +1, suggests: ↑2)
+ - runtime: (recommends: +1)
+ - test: +1 (recommends: ↑1 ↓1)
+
+ [Minor]
+ - Drop hard 5.8 requirement
 
 0.001003 2014-08-30T10:45:12Z
  [00 Trivial]
