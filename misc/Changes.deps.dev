@@ -11,7 +11,6 @@ This file contains changes to DEVELOPMENT dependencies only ( both REQUIRED and 
 
  [Removed / develop requires]
  - Dist::Zilla::Plugin::MetaYAML
- - Dist::Zilla::Plugin::TestRelease
 
 0.001004 2015-06-21T19:47:27Z
  [Added / develop recommends]
