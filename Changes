@@ -1,6 +1,6 @@
 Release history for CPAN-Changes-Group-Dependencies-Details
 
-0.001005 2015-07-18T18:00:56Z a568a60
+0.001005 2015-07-18T18:11:13Z cc4b197
  [BugFix]
  - Guard further against CPAN::Changes serializer changes breaking tests
  - Write tests for (pending) 0.5 serializer.
