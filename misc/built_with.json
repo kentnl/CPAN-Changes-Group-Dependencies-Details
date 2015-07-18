@@ -57,6 +57,7 @@
       "Dist::Zilla::Plugin::Test::MinimumVersion" : "2.000006",
       "Dist::Zilla::Plugin::Test::Perl::Critic" : "3.000",
       "Dist::Zilla::Plugin::Test::ReportPrereqs" : "0.021",
+      "Dist::Zilla::Plugin::TestRelease" : "5.037",
       "Dist::Zilla::Plugin::Twitter" : "0.026",
       "Dist::Zilla::Plugin::UploadToCPAN" : "5.037",
       "Dist::Zilla::PluginBundle::Author::KENTNL" : "2.025001",

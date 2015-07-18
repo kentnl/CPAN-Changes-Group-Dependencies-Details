@@ -75,6 +75,7 @@
             "Dist::Zilla::Plugin::Test::MinimumVersion" : "0",
             "Dist::Zilla::Plugin::Test::Perl::Critic" : "0",
             "Dist::Zilla::Plugin::Test::ReportPrereqs" : "0",
+            "Dist::Zilla::Plugin::TestRelease" : "0",
             "Dist::Zilla::Plugin::Twitter" : "0",
             "Dist::Zilla::Plugin::UploadToCPAN" : "0",
             "Pod::Coverage::TrustPod" : "0",
@@ -574,6 +575,11 @@
             },
             "name" : "@Author::KENTNL/RunExtraTests",
             "version" : "0.027"
+         },
+         {
+            "class" : "Dist::Zilla::Plugin::TestRelease",
+            "name" : "@Author::KENTNL/TestRelease",
+            "version" : "5.037"
          },
          {
             "class" : "Dist::Zilla::Plugin::ConfirmRelease",

@@ -11,6 +11,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
 
  [Removed / develop requires]
  - Dist::Zilla::Plugin::MetaYAML
+ - Dist::Zilla::Plugin::TestRelease
 
 0.001004 2015-06-21T19:47:27Z
  [Added / configure requires]

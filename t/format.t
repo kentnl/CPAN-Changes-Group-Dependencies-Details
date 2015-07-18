@@ -41,16 +41,15 @@ EOF
     $CPAN::Changes::VERSION, $sample_version;
 }
 
+local $TODO;
+if ( not eval "CPAN::Changes->VERSION(q[0.500]); 1" ) {
+  $TODO = "Legacy serialization scheme";
+}
 use CPAN::Changes::Release;
 use CPAN::Changes::Group;
 use CPAN::Meta::Prereqs::Diff;
 use CPAN::Changes::Group::Dependencies::Details;
 use Test::Differences qw( eq_or_diff );
-
-local $TODO;
-if ( $ENV{AUTHOR_TESTING} ) {
-  $TODO = 'Format Changes known hard';
-}
 
 eq_or_diff( $sample_changes->serialize,                                       $sample,         'Guard: Whole file same' );
 eq_or_diff( $sample_changes->release('1.7.5')->serialize,                     $release_sample, 'Guard: release same' );
