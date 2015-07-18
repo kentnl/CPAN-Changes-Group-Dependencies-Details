@@ -4,7 +4,7 @@ CPAN::Changes::Group::Dependencies::Details - Full details of dependency changes
 
 # VERSION
 
-version 0.001005
+version 0.001006
 
 # SYNOPSIS
 
