@@ -60,7 +60,6 @@ do { my $x = {
                                       'Dist::Zilla::Plugin::Test::MinimumVersion' => '0',
                                       'Dist::Zilla::Plugin::Test::Perl::Critic' => '0',
                                       'Dist::Zilla::Plugin::Test::ReportPrereqs' => '0',
-                                      'Dist::Zilla::Plugin::TestRelease' => '0',
                                       'Dist::Zilla::Plugin::Twitter' => '0',
                                       'Dist::Zilla::Plugin::UploadToCPAN' => '0',
                                       'Pod::Coverage::TrustPod' => '0',
