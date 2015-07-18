@@ -41,6 +41,10 @@ EOF
     $CPAN::Changes::VERSION, $sample_version;
 }
 
+local $TODO;
+if ( not eval "CPAN::Changes->VERSION(q[0.500]); 1" ) {
+  $TODO = "Legacy serialization scheme";
+}
 use CPAN::Changes::Release;
 use CPAN::Changes::Group;
 use CPAN::Meta::Prereqs::Diff;
