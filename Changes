@@ -1,5 +1,14 @@
 Release history for CPAN-Changes-Group-Dependencies-Details
 
+0.001005 2015-07-18T18:11:13Z cc4b197
+ [BugFix]
+ - Guard further against CPAN::Changes serializer changes breaking tests
+ - Write tests for (pending) 0.5 serializer.
+
+ [Dependencies::Stats]
+ - Dependencies changed since 0.001004, see misc/*.deps* for details
+ - develop: +3 -1 (suggests: ↑1)
+
 0.001004 2015-06-21T19:47:27Z 93c2d1a
  [BugFix]
  - Guard against changes in whitespace schemes in future/past CPAN::Changes versions.
