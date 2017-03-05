@@ -1,6 +1,14 @@
 Release history for CPAN-Changes-Group-Dependencies-Details
 
-0.001006 2015-07-18T18:11:52Z 62c5962
+0.001006 2017-03-05T08:00:25Z 56347ef
+ [Bugfix]
+ - Avoid test failures on 5.26 w/ -Ddefault_inc_excludes_dot
+ - Closes https://github.com/kentnl/CPAN-Changes-Group-Dependencies-Details/issues/2
+
+ [Dependencies::Stats]
+ - Dependencies changed since 0.001005, see misc/*.deps* for details
+ - develop: +3 ↑2 (suggests: ↑2)
+ - test: ↓1
 
 0.001005 2015-07-18T18:11:13Z cc4b197
  [BugFix]
