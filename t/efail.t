@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-use Test::More;
+use Test::More tests => 3;
 
 # ABSTRACT: Expected failures
 
@@ -47,6 +47,3 @@ is_fail 'has_changes will fail without new_prereqs' => sub {
     'old_prereqs' => {},
   )->has_changes;
 };
-
-done_testing;
-
