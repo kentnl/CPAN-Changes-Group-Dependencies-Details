@@ -25,7 +25,7 @@ name: CPAN-Changes-Group-Dependencies-Details
 provides:
   CPAN::Changes::Group::Dependencies::Details:
     file: lib/CPAN/Changes/Group/Dependencies/Details.pm
-    version: '0.001006'
+    version: '0.001007'
 recommends:
   Moo: '1.000008'
 requires:
@@ -44,4 +44,4 @@ resources:
   bugtracker: https://github.com/kentnl/CPAN-Changes-Group-Dependencies-Details/issues
   homepage: https://github.com/kentnl/CPAN-Changes-Group-Dependencies-Details
   repository: https://github.com/kentnl/CPAN-Changes-Group-Dependencies-Details.git
-version: '0.001006'
+version: '0.001007'
