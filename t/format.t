@@ -40,7 +40,7 @@ EOF
     skip_all => sprintf "Serialization scheme of CPAN::Changes %s is different to that of %s",
     $CPAN::Changes::VERSION, $sample_version;
 }
-
+plan tests => 6;
 local $TODO;
 if ( not eval "CPAN::Changes->VERSION(q[0.500]); 1" ) {
   $TODO = "Legacy serialization scheme";
@@ -115,6 +115,3 @@ EOF
   eq_or_diff( $release->serialize, $expected, 'Release serialization' );
 }
 pass("ok");
-
-done_testing;
-
