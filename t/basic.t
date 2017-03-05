@@ -65,6 +65,3 @@ for my $old (@prereqs) {
     }
   }
 }
-
-done_testing;
-
